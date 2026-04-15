@@ -23,6 +23,7 @@ class Student extends Database
             $students[] = $student;
         }
 
+        return $students;
 
     }
 
