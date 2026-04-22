@@ -1,8 +1,19 @@
 {
-    "vscode-pets.theme": "forest",
-    "vscode-pets.throwBallWithMouse": true
-}
+  "workbench.iconTheme": "material-icon-theme",
 
-{
-  "editor.fontLigatures": true
+  "editor.fontFamily": "'FiraCode Nerd Font', 'Fira Code', monospace",
+  "editor.fontLigatures": true,
+
+  "editor.fontSize": 14,
+  "editor.lineHeight": 22,
+
+  "material-icon-theme.activeIconPack": "react",
+  "material-icon-theme.folders.color": "#42A5F5",
+
+  "editor.minimap.enabled": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+
+  "vscode-pets.theme": "forest",
+  "vscode-pets.throwBallWithMouse": true
 }
