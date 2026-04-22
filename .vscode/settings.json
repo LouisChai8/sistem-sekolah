@@ -2,3 +2,7 @@
     "vscode-pets.theme": "forest",
     "vscode-pets.throwBallWithMouse": true
 }
+
+{
+  "editor.fontLigatures": true
+}
