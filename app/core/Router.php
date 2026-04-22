@@ -1,4 +1,4 @@
-<?php  
+<?php
 namespace App\Core;
 
 use App\Controllers\StudentsController;
@@ -9,12 +9,12 @@ class Router
 
     public function add(string $method, string $uri, string $controller, string $function): void
     {
-     $this->routes[] = [
-        'method' => $method,
-        'uri' => $uri,
-        'controller' => $controller,
-        'function' => $function,
-     ];
+        $this->routes[] = [
+            'method' => $method,
+            'uri' => $uri,
+            'controller' => $controller,
+            'function' => $function,
+        ];
     }
     public function run()
     {
@@ -27,19 +27,18 @@ class Router
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
-        foreach($this-> routes as $route) {
+        foreach ($this->routes as $route) {
             $pattern = str_replace(
-             '{id}',
-             '([0-9])',
-            $route['uri'],
+                '{id}',
+                '([0-9]+)',
+                $route['uri'],
             );
             $pattern = '#^' . $pattern . '$#';
-            // /students/([0-9]+)
 
             if (preg_match($pattern, $uri, $matches) && $method === $route['method']) {
                 array_shift($matches);
                 require_once '../app/controllers/' . $route['controller'] . '.php';
-    
+
                 $controllerClass = 'App\\Controllers\\' . $route['controller'];
                 $controller = new $controllerClass();
                 $function = $route['function'];
